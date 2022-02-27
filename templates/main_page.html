@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Конспект Элементарной Теории Музыки</title>
+    <link rel="stylesheet" type="text/css" href={{url_for('static', filename='css/style.css')}}>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<div class="overlay"></div>
+<div class="container">
+<div class="sidebar">
+    <h1>Оглавление</h1>
+    {%for i in termins%}
+    {%if termins[i.id - 1].paragraph != termins[i.id - 2].paragraph %}
+    <p><a href="#paragraph{{termins[i.id - 1].paragraph}}">§{{termins[i.id - 1].paragraph}}</a></p>
+    {%endif%}
+    <p>  -  <a href="#{{i.id}}">  {{i.name}}</a></p>
+
+{%endfor%}
+</div>
+    <div class="conspect">
+            {%for i in termins%}
+            {%if termins[i.id - 1].paragraph != termins[i.id - 2].paragraph %}
+            <h2 align="center"><a name="paragraph{{termins[i.id - 1].paragraph}}">§{{termins[i.id - 1].paragraph}}</a></h2>
+            {%endif%}
+            <h3><a name="{{i.id}}">{{i.name}} </a></h3>
+                    <p>{{i.definition}}</p>
+            {%if i.pictures_id %}
+                <p><img src="/static/img/{{i.pictures_id}}.png" width='60%' align="center"></p>
+            {%endif%}
+            {%endfor%}
+        </div>
+    <div class="sidebar-right">
+        <h2 align="center">Данный сайт представляет собой конспект учебника "Элементарная теория музыки" И.В.Способина.</h2>
+        <a>Игорь Владимирович Способин являлся одним из педагогов-теоретиков, которые обхватили за свою жизнь почти все теоретические дисциплины.</a>
+        <p>Выдающийся профессор кафедры теории Московской консерватории, он чрезвычайно много сделал для преподавания теоретических дисциплин и в среднем звене.</p>
+    </div>
+</div>
+</body>
+</html>
