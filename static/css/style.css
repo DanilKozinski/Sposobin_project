@@ -23,18 +23,21 @@
     position:absolute;
     top: 0px;
     width: 60%;
-    left: 23%;
+    left: 20%;
     bottom: 0;
     overflow: auto;
     border: 15px solid;
     border-color: #a33331;
 }
+.child {
+    margin: 5%; /* Отступы вокруг */
+   }
 .sidebar-right{
     position:absolute;
     top: 0px;
     right: 8px;
     bottom:0;
-    width: 20%;
+    width: 19%;
     background-color: white;
     border: 15px solid;
     border-color: #a33331;

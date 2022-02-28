@@ -21,6 +21,7 @@
 {%endfor%}
 </div>
     <div class="conspect">
+        <div class="child">
             {%for i in termins%}
             {%if termins[i.id - 1].paragraph != termins[i.id - 2].paragraph %}
             <h2 align="center"><a name="paragraph{{termins[i.id - 1].paragraph}}">§{{termins[i.id - 1].paragraph}}</a></h2>
@@ -32,6 +33,7 @@
             {%endif%}
             {%endfor%}
         </div>
+    </div>
     <div class="sidebar-right">
         <h2 align="center">Данный сайт представляет собой конспект учебника "Элементарная теория музыки" И.В.Способина.</h2>
         <a>Игорь Владимирович Способин являлся одним из педагогов-теоретиков, которые обхватили за свою жизнь почти все теоретические дисциплины.</a>
