@@ -14,4 +14,5 @@ def a():
     return render_template('main_page.html', termins=termins)
 
 if __name__ == '__main__':
-    app.run(port=8080, host='127.0.0.1')
+    # Threaded option to enable multiple instances for multiple user access support
+    app.run(threaded=True, port=5000)
