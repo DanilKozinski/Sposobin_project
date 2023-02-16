@@ -48,8 +48,3 @@ def alexeev():
     termins_alexeev_searched = db_sess.query(Terms_Alexeev).filter(Terms_Alexeev.name.like(f'%{search}%'))
     return render_template('alexeev.html', termins_a=termins_alexeev_searched)
 
-
-
-if __name__ == '__main__':
- port = int(os.environ.get("PORT", 5000))
- app.run(host='192.168.35.1', port=port)
