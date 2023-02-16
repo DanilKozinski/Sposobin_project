@@ -8,37 +8,69 @@
     </style>
 </head>
 <body>
-<div class="overlay"></div>
+    <a href="/sposobin" class="btn">И.Способин</a>
+    <a href="/vahromeev" class="btn">В.Вахромеев</a>
+    <a href="/alexeev" class="btn">Б.Алексеев</a>
+  <form>
+      <form action="/" method="POST">
+          <input name="search_all" id="my_input" type="text">
+            <input id="my_submit" type="submit" value="Найти">
+      </form>
+
+      <div class="overlay"></div>
 <div class="container">
 <div class="sidebar">
     <h1>Оглавление</h1>
-    {%for i in termins%}
-    {%if termins[i.id - 1].paragraph != termins[i.id - 2].paragraph %}
-    <p><a href="#paragraph{{termins[i.id - 1].paragraph}}">§{{termins[i.id - 1].paragraph}}</a></p>
-    {%endif%}
+    <h2>И.Способин:</h2>
+    {% set termins_s = union[0] %}
+    {% set termins_v = union[1] %}
+    {% set termins_a = union[2] %}
+    {%for i in termins_s%}
     <p>  -  <a href="#{{i.id}}">  {{i.name}}</a></p>
+    {% endfor %}
 
+            <h2>В.Вахромеев:</h2>
+    {%for i in termins_v%}
+    <p>  -  <a href="#{{i.id}}">  {{i.name}}</a></p>
+{%endfor%}
+            <h2>Б.Алексеев:</h2>
+    {%for i in termins_a%}
+    <p>  -  <a href="#{{i.id}}">  {{i.name}}</a></p>
 {%endfor%}
 </div>
     <div class="conspect">
         <div class="child">
-            {%for i in termins%}
-            {%if termins[i.id - 1].paragraph != termins[i.id - 2].paragraph %}
-            <h2 align="center"><a name="paragraph{{termins[i.id - 1].paragraph}}">§{{termins[i.id - 1].paragraph}}</a></h2>
-            {%endif%}
+            <h2>И.Способин:</h2>
+            {%for i in termins_s%}
             <h3><a name="{{i.id}}">{{i.name}} </a></h3>
                     <p>{{i.definition}}</p>
             {%if i.pictures_id %}
-                <p><img src="/static/img/{{i.pictures_id}}.png" width='60%' align="center"></p>
+                <p><img src="/static/img_sposobin/{{i.pictures_id}}.png" width='60%' align="center"></p>
+            {%endif%}
+            {%endfor%}
+            <h2>В.Вахромеев:</h2>
+            {%for i in termins_v%}
+            <h3><a name="{{i.id}}">{{i.name}} </a></h3>
+                    <p>{{i.definition}}</p>
+            {%if i.pictures_id %}
+                <p><img src="/static/img_vahromeev/{{i.pictures_id}}.png" width='60%' align="center"></p>
+            {%endif%}
+            {%endfor%}
+                        <h2>Б.Алексеев:</h2>
+            {%for i in termins_a%}
+            <h3><a name="{{i.id}}">{{i.name}} </a></h3>
+                    <p>{{i.definition}}</p>
+            {%if i.pictures_id %}
+                <p><img src="/static/img_alexeev/{{i.pictures_id}}.png" width='60%' align="center"></p>
             {%endif%}
             {%endfor%}
         </div>
     </div>
     <div class="sidebar-right">
-        <h2 align="center">Данный сайт представляет собой конспекты параграфов учебника "Элементарная теория музыки" И.В.Способина.</h2>
-        <a>Игорь Владимирович Способин являлся одним из педагогов-теоретиков, которые обхватили за свою жизнь почти все теоретические дисциплины.</a>
-        <p>Выдающийся профессор кафедры теории Московской консерватории, он чрезвычайно много сделал для преподавания теоретических дисциплин и в среднем звене.</p>
+        <h2 align="center">Данный сайт представляет собой конспекты параграфов трёх учебников по элементарной теория музыки за авторством И.Способина, В.Вахромеева, Б.Алексеева.</h2>
     </div>
 </div>
+</form>
+    </div>
 </body>
 </html>

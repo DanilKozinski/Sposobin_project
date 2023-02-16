@@ -1,0 +1,32 @@
+update terms_vahromeev
+set name = "Звук как ощущение"
+where id = 2
+
+insert into terms_vahromeev(name, definition, pictures_id, paragraph)
+values("Музыкальная система",
+ "Ряд звуков, находящихся между собой в определенных взаимоотношениях",
+  "",
+   "4")
+
+
+Select * from terms_sposobin
+where name like "%звук%"
+UNIOn
+Select * from terms_vahromeev
+where name like "%звук%"
+UNIOn
+Select * from terms_alexeev
+where name like "%звук%"
+
+
+Select * from terms_sposobin
+where paragraph = 2
+
+Select * from terms_sposobin
+where name like "%Звук%"
+
+drop table terms_alexeev
+
+update terms_vahromeev
+set name = "Звук как ощущение"
+where id = 2

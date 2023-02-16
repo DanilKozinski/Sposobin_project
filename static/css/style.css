@@ -9,7 +9,7 @@
 }
 .sidebar {
     position:absolute;
-    top: 0px;
+    top: 70px;
     left: 0px;
     bottom:0;
     width: 15%;
@@ -21,7 +21,7 @@
 }
 .conspect{
     position:absolute;
-    top: 0px;
+    top: 70px;
     width: 60%;
     left: 19%;
     bottom: 0;
@@ -34,7 +34,7 @@
    }
 .sidebar-right{
     position:absolute;
-    top: 0px;
+    top: 70px;
     right: 0px;
     bottom:0;
     width: 15%;
@@ -44,3 +44,23 @@
     overflow: auto;
     z-index: 1;
 }
+.btn {
+    width: 100px;
+    height: 20px;
+    display: inline-block;
+    color: #000000;
+    text-decoration: none;
+    border: 5px solid;
+    border-color: #a33331;
+    font-size: 18px;
+   }
+.btn_back{
+    width: 60px;
+    height: 20px;
+    display: inline-block;
+    color: #000000;
+    text-decoration: none;
+    border: 5px solid;
+    border-color: #a33331;
+    font-size: 18px;
+   }

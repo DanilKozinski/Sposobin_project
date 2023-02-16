@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Конспект Элементарной Теории Музыки</title>
+    <link rel="stylesheet" type="text/css" href={{url_for('static', filename='css/style.css')}}>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<a href= "/" class="btn_back">Назад</a>
+<form action="/sposobin" method="POST">
+  <input name="search_s" id="my_input" type="text">
+  <input type="submit" value="Найти">
+</form>
+<div class="overlay"></div>
+<div class="container">
+<div class="sidebar">
+    <h1>Оглавление</h1>
+    {%for i in termins_s%}
+    <p>  -  <a href="#{{i.id}}">  {{i.name}}</a></p>
+    {% endfor %}
+</div>
+    <div class="conspect">
+        <div class="child">
+            {%for i in termins_s%}
+            <h3><a name="{{i.id}}">{{i.name}} </a></h3>
+                    <p>{{i.definition}}</p>
+            {%if i.pictures_id %}
+                <p><img src="/static/img_sposobin/{{i.pictures_id}}.png" width='60%' align="center"></p>
+            {%endif%}
+            {%endfor%}
+        </div>
+    </div>
+    <div class="sidebar-right">
+        <h2 align="center">Конспект учебника "Элементарная теория музыки" И.Способина</h2>
+    </div>
+</div>
+</body>
+</html>
