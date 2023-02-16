@@ -9,6 +9,7 @@ values("Музыкальная система",
    "4")
 
 
+
 Select * from terms_sposobin
 where name like "%звук%"
 UNIOn
